@@ -8,6 +8,12 @@ categories: Jiang Jingwei
 
 这一篇顺便记录一下搭博客的时候遇到的坑。
 
+#### 搭建博客的整体思路
+
+整体的思路来自油管上的这个[视频][Creating-a-Blog-with-Hugo-and-Github-in-10-minutes]。
+- 创建两个repo。一个保存博客的源码，一个保存由工具生成的静态网站代码。
+- 通过`git`的`submodule`功能，在一个文件夹下，同时管理两个repo。
+
 #### Github CodeSpaces
 
 很久之前注册了`Code Spaces`的测试计划。最近收到了进入测试计划的邮件，就想着用`Code Spcaes`去搭建和更新一个博客，同时也给自己留了个坑。
@@ -16,15 +22,10 @@ categories: Jiang Jingwei
 
 `Jekyll`（不知道怎么念）是github默认的Pages模板。执行`jekyll b`生成静态的网站。
 
-#### 搭建博客的整体思路
-
-整体的思路来自油管上的这个[视频][Creating-a-Blog-with-Hugo-and-Github-in-10-minutes]。
-- 创建两个repo。一个保存博客的源码，一个保存由工具生成的静态网站代码。
-- 通过`git`的`submodule`功能，在一个文件夹下，同时管理两个repo。
-
 #### 坑
 
-不知什么原因，在`Code Spaces`中，管理`submodule`的时候push总是失败，提示没有权限。
+- 不知什么原因，在`Code Spaces`中，管理`submodule`的时候push总是失败，提示没有权限。
+- Github Pages在选择theme之前没有生效。
 
 #### 摸爬滚打
 
