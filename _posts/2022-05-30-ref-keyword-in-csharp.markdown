@@ -88,6 +88,31 @@ ref SomeStruct GetStruct()
 ref var struct = ref GetStruct();
 // 按引用将值返回一个复杂的结构体，能够有效减小开销。
 ```
+下面这两个用法还没看明白，等看明白了再补一个。
 
 > 在成员正文中，指示引用返回值是否作为调用方欲修改的引用被存储在本地。 或指示局部变量按引用访问另一个值。
+
 > 在 `struct` 声明中，声明 `ref struct` 或 `readonly ref struct`。
+
+另外还有两个关键字 `in` 和 `out` ，与 `ref` 比较相似。
+
+不同之处在于 `in` 只能向被调用的方法传递引用，而在被调用的方法中，被`in`修饰的参数是只读的。而 `out` 只能从被调用的方法向方法的调用方传递引用。
+
+```csharp
+int n = 10;
+void InMethod(in int num)
+{
+    num = 1;
+}
+InMethod(in n);
+// error CS8331: Cannot assign to variable 'in int' because it is a readonly variable
+// in 参数被视为只读。
+
+void OutMethod(out int num)
+{
+    num++;
+}
+OutMethod(out n);
+// error CS0269: Use of unassigned out parameter 'num'
+// out 参数被视为未初始化的变量。
+```
