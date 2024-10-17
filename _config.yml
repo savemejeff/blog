@@ -19,9 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Jiang Jingwei's Blog
-email: jjw12138@yahoo.com
+email: jiang.jingwei@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  三本计科，啥也不会
+  -
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://savemejeff.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
